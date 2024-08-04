@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
 import { validateFullName, validateSignIn } from '../utils/validate';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../utils/firebase';
 
 export default function Login() {
 
@@ -15,8 +17,45 @@ export default function Login() {
         const hasSignInError = validateSignIn(email.current.value, password.current.value);
         setErrorMessage(hasSignInError);
 
-        const hasFullNameError = validateFullName(fullName.current.value);
-        setErrorMessage(hasFullNameError);
+        if (!isSignInForm) {
+            const hasFullNameError = validateFullName(fullName.current.value);
+            setErrorMessage(hasFullNameError);
+        }
+
+        if (hasSignInError) return;
+
+        //Sign In / Sign Up
+        if (!isSignInForm) {
+            // Sign Up
+            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                    // Signed up 
+                    const user = userCredential.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    //const errorCode = error.code;
+                    const apiErrorMessage = error.message;
+                    console.log(apiErrorMessage);
+                    setErrorMessage(apiErrorMessage);
+
+                });
+        } else {
+            // Sign In
+            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    // ...
+                    console.log(user)
+                })
+                .catch((error) => {
+                    //const errorCode = error.code;
+                    console.log(error);
+                    const errorMessage = error.message;
+                    setErrorMessage(errorMessage);
+                });
+        }
     }
 
     const toggleSignInSignUp = () => {

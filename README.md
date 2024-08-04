@@ -1,10 +1,11 @@
 ## NETFLIX - GPT
+URL: https://netflixgpt-64ad3.web.app/
 
 ## Configuration
 - Create rect app
 - Configured Tailwind css 
 - Configured Firebase
-
+- Deploying to Firebase
 
 
 ## Features
