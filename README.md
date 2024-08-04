@@ -3,6 +3,8 @@
 ## Configuration
 - Create rect app
 - Configured Tailwind css 
+- Configured Firebase
+
 
 
 ## Features
