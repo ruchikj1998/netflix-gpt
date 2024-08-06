@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
-import Header from './Header'
 import { validateFullName, validateSignIn } from '../utils/validate';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
 
 export default function Login() {
@@ -13,25 +12,30 @@ export default function Login() {
     const fullName = useRef(null);
 
     const handleSignInSignUp = () => {
-        console.log("hey");
         const hasSignInError = validateSignIn(email.current.value, password.current.value);
+       
         setErrorMessage(hasSignInError);
-
+        if (hasSignInError) return;
+        
         if (!isSignInForm) {
             const hasFullNameError = validateFullName(fullName.current.value);
             setErrorMessage(hasFullNameError);
+            if (hasFullNameError) return;
         }
-
-        if (hasSignInError) return;
-
+        
         //Sign In / Sign Up
         if (!isSignInForm) {
             // Sign Up
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     // Signed up 
-                    const user = userCredential.user;
-                    console.log(user);
+                    //const user = userCredential.user;
+                    updateProfile(auth.currentUser, {
+                        displayName: fullName.current.value
+                    }).then(() => {
+                    }).catch((error) => {
+                        setErrorMessage(error.message);
+                    });
                 })
                 .catch((error) => {
                     //const errorCode = error.code;
@@ -45,13 +49,10 @@ export default function Login() {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;
-                    // ...
-                    console.log(user)
+                    //const user = userCredential.user;
                 })
                 .catch((error) => {
                     //const errorCode = error.code;
-                    console.log(error);
                     const errorMessage = error.message;
                     setErrorMessage(errorMessage);
                 });
@@ -63,7 +64,6 @@ export default function Login() {
     }
     return (
         <div>
-            <Header />
             <div className='w-full h-auto absolute'>
                 <img
                     className='opacity-4'

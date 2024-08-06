@@ -6,10 +6,12 @@ URL: https://netflixgpt-64ad3.web.app/
 - Configured Tailwind css 
 - Configured Firebase
 - Deploying to Firebase
+- Adding Redux Library
+- TMDB Moview API
 
 
 ## Features
-- Login Page
+- Login Page (Firebase API)
     - Sign Up page Form
     - redirect to Browse page
 - Browse (Auth)
