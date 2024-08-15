@@ -8,6 +8,10 @@ URL: https://netflixgpt-64ad3.web.app/
 - Deploying to Firebase
 - Adding Redux Library
 - TMDB Moview API
+- Maintaining constants file for hardcoded values
+- Using TMDB API for moview lists
+    - Play Now Movie API
+    - Vides Api for a single movide for feting a trailer
 
 
 ## Features
