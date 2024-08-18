@@ -18,7 +18,7 @@ function Header() {
   return (
     <div className='absolute z-10 flex justify-between w-full  bg-gradient-to-b from-black'>
       <img
-        className='w-44'
+        className='w-44 mx-8'
         src={LOGO}
         alt='Logo' />
 

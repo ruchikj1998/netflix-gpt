@@ -15,6 +15,8 @@ URL: https://netflixgpt-64ad3.web.app/
 - Custom hooks for Movie lists and Movie videos (Trailer)
 - Managing the API data by storing it into the Redux store
 - Build secondary component (SecondaryBrowserContainer)
+- Movie list and more custom hooks for fetching popular and upcoming movies
+- Creating components for movie cards
 
 
 ## Features
