@@ -12,6 +12,9 @@ URL: https://netflixgpt-64ad3.web.app/
 - Using TMDB API for moview lists
     - Play Now Movie API
     - Vides Api for a single movide for feting a trailer
+- Custom hooks for Movie lists and Movie videos (Trailer)
+- Managing the API data by storing it into the Redux store
+- Build secondary component (SecondaryBrowserContainer)
 
 
 ## Features
