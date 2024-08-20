@@ -17,7 +17,8 @@ URL: https://netflixgpt-64ad3.web.app/
 - Build secondary component (SecondaryBrowserContainer)
 - Movie list and more custom hooks for fetching popular and upcoming movies
 - Creating components for movie cards
-
+- Building GPT search feature
+- Build multy langauge GPT search page
 
 ## Features
 - Login Page (Firebase API)

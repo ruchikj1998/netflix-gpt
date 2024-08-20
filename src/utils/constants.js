@@ -13,3 +13,8 @@ export const API_OPTIONS = {
   };
 
   export const MOVIE_IMAGE_URL = "https://image.tmdb.org/t/p/original/";
+
+  export const LANG_OPTIONS = [
+    {id: "en", name: "English"},
+    {id: "hindi", name: "Hindi"}
+  ]

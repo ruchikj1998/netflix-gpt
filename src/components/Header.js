@@ -1,18 +1,32 @@
 import { signOut } from 'firebase/auth';
 import React from 'react'
 import { auth } from '../utils/firebase';
-import { useSelector } from 'react-redux';
-import { LOGO, USER_PHOTO } from '../utils/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { LANG_OPTIONS, LOGO, USER_PHOTO } from '../utils/constants';
+import { toggleGptSearchView } from '../utils/gptSclice';
+import { changeLang } from '../utils/configSlice';
 
 function Header() {
 
-  const user = useSelector(store => store.user)
+  const dispatch = useDispatch();
+  const user = useSelector(store => store.user);
+  const gptSearch = useSelector(store=> store.gpt.showGptSearch);
+
   const handleSignOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
     }).catch((error) => {
       // An error happened.
     });
+  }
+
+  const handleGPTSearchClick = () => {
+    //Toggle GPT search component
+    dispatch(toggleGptSearchView());
+  }
+
+  const handleLangChange = (e) => {
+    dispatch(changeLang(e.target.value));
   }
 
   return (
@@ -25,7 +39,25 @@ function Header() {
       <div>
         {user &&
           <ul className='m-4 p-4 flex font-bold text-white'>
-            <li className=' mx-2'>{user.displayName}</li>
+            { gptSearch && <li className=' mx-2'>
+              <select
+                className='bg-black text-white px-4 py-2 rounded-md border border-white'
+                onChange={handleLangChange}
+              >
+                {LANG_OPTIONS.map((option) => (
+                  <option key={option.id} value={option.id}>{option.name}</option>
+                ))}
+              </select>
+            </li>}
+            <li className=' mx-2'>
+              <button
+                className='px-4 py-2 rounded-md border border-white bg-black text-white'
+                onClick={handleGPTSearchClick}
+              >
+                {gptSearch ? "Browse" : "GPT Search"}
+              </button>
+            </li>
+            <li className=' mx-2 m-auto'>{user.displayName}</li>
             <li
               className=' mx-2 cursor-pointer group'
               onClick={handleSignOut}>
