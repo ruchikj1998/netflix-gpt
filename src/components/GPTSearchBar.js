@@ -63,12 +63,12 @@ export default function GPTSearchBar() {
         <div className=''>
             <div className='w-full h-auto absolute -z-10'>
                 <img
-                    className='opacity-4'
+                    className='opacity-4 h-screen md:h-auto object-cover'
                     src={NETFLIX_BACKGROUND}
                     alt='bg' />
             </div>
             <form
-                className='pt-[10%] w-1/2 m-auto text-center grid grid-cols-12'
+                className='pt-[30%] md:pt-[10%] mx-2 md:m-auto md:w-1/2 text-center grid grid-cols-12'
                 onSubmit={(e) => e.preventDefault()}
             >
                 <input
@@ -84,7 +84,7 @@ export default function GPTSearchBar() {
                 </button>
             </form>
             <p
-                className='text-white text-center w-[75%] m-auto bg-black bg-opacity-50 rounded-md p-4 text-xl'>
+                className='text-white text-center text-sm md:text-xl mx-2 md:w-[75%] md:m-auto bg-black bg-opacity-60 rounded-md p-4'>
                 Currently the GPT AI results are blocked beacuse of max use of api.
                 You can still search and will get MOCK data for result "Most loved movies in India". The result is Bahubali, Minions, Kill, Pink Panther & Home Alone
             </p>

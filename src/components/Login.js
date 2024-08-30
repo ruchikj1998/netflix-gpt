@@ -68,15 +68,15 @@ export default function Login() {
         <div>
             <div className='w-full h-auto absolute'>
                 <img
-                    className='opacity-4'
+                    className='opacity-4  h-screen md:h-auto object-cover'
                     src={NETFLIX_BACKGROUND}
                     alt='bg' />
             </div>
             <form
                 onSubmit={(e) => e.preventDefault()}
-                className='absolute w-3/12 bg-black bg-opacity-75 p-8 my-32 mx-auto right-0 left-0'>
+                className='absolute w-ful md:w-3/12 bg-black bg-opacity-75 p-8 my-32 mx-auto right-0 left-0'>
                 <h2
-                    className='text-white text-3xl  my-4'>
+                    className='text-white text-xl md:text-3xl  my-4'>
                     {isSignInForm ? "Sign In" : "Sign Up"}
                 </h2>
                 {!isSignInForm &&

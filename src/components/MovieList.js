@@ -5,7 +5,7 @@ export default function MovieList({ title, movies }) {
 
     return (
         <div className='bg-black text-white'>
-            <h1 className='text-2xl p-6 font-bold relative'>{title}</h1>
+            <h1 className=' text-base md:text-2xl p-6 font-bold relative'>{title}</h1>
             <div className='flex overflow-x-scroll px-6 relative no-scrollbar'>
 
                 <div className='flex'>

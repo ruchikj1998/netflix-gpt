@@ -19,6 +19,12 @@ URL: https://netflixgpt-64ad3.web.app/
 - Creating components for movie cards
 - Building GPT search feature
 - Build multy langauge GPT search page
+- GPT open AI with GPT seach API call
+- Fetch GPT result and passing to search TPMD movies
+- Reusing Movie list component in multiple pages
+- Memoization
+- Making env file and securing the keys
+- Making app mobile responsive
 
 ## Features
 - Login Page (Firebase API)

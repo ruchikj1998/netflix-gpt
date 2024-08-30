@@ -30,18 +30,18 @@ function Header() {
   }
 
   return (
-    <div className='absolute z-10 flex justify-between w-full  bg-gradient-to-b from-black'>
+    <div className='absolute z-10 flex justify-between w-full  bg-black md:bg-gradient-to-b from-black'>
       <img
-        className='w-44 mx-8'
+        className='mx-2 w-16 md:w-44 md:mx-8'
         src={LOGO}
         alt='Logo' />
 
       <div>
         {user &&
-          <ul className='m-4 p-4 flex font-bold text-white'>
+          <ul className='md:m-4 p-4 flex font-bold text-white'>
             { gptSearch && <li className=' mx-2'>
               <select
-                className='bg-black text-white px-4 py-2 rounded-md border border-white'
+                className='bg-black text-white text-xs md:text-base px-2 md:px-4 py-1 md:py-2 rounded-md border border-white'
                 onChange={handleLangChange}
               >
                 {LANG_OPTIONS.map((option) => (
@@ -51,13 +51,13 @@ function Header() {
             </li>}
             <li className=' mx-2'>
               <button
-                className='px-4 py-2 rounded-md border border-white bg-black text-white'
+                className='px-2 py-1 text-[12px]  md:px-4 md:py-2 md:text-base rounded-md border border-white bg-black text-white'
                 onClick={handleGPTSearchClick}
               >
                 {gptSearch ? "Browse" : "GPT Search"}
               </button>
             </li>
-            <li className=' mx-2 m-auto'>{user.displayName}</li>
+            <li className=' text-center text-sm md:text-base mx-2 m-auto'>{user.displayName}</li>
             <li
               className=' mx-2 cursor-pointer group'
               onClick={handleSignOut}>
