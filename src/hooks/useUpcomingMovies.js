@@ -1,13 +1,14 @@
 import { useEffect } from 'react'
 import { API_OPTIONS } from '../utils/constants';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUpcomingMovies } from '../utils/moviesSlice';
 
 const useUpacomingMovies = () => {
     const dispatch = useDispatch();
+    const upcomingMovies = useSelector(store => store.movies.upcomingMovies);
 
     useEffect(()=> {
-      getUpcomingMovies();
+      !upcomingMovies && getUpcomingMovies();
     }, [])
   
     // Feting Now Playing movie API and store it in moviesSlice Store
