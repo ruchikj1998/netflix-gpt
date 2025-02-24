@@ -1,5 +1,4 @@
 ## NETFLIX - GPT
-URL: https://netflixgpt-64ad3.web.app/
 
 ## Configuration
 - Create rect app
