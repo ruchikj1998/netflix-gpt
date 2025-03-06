@@ -20,5 +20,5 @@ export const API_OPTIONS = {
     {id: "hindi", name: "Hindi"}
   ];
 
-  //export const OPENAI_KEY = process.env.OPENAI_KEY;
-  export const OPENAI_KEY = import.meta.env.OPENAI_KEY;
+  export const OPENAI_KEY = process.env.OPENAI_KEY;
+  //export const OPENAI_KEY = import.meta.env.OPENAI_KEY;
