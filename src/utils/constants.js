@@ -8,11 +8,11 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer '+ process.env.TBDM_AUTH
+      Authorization: 'Bearer '+ process.env.REACT_APP_TBDM_AUTH
       //Authorization: 'Bearer '+ import.meta.env.TBDM_AUTH
     }
   };
-  console.log(process.env.TBDM_AUTH)
+  console.log(process.env.REACT_APP_TBDM_AUTH)
   
   export const MOVIE_IMAGE_URL = "https://image.tmdb.org/t/p/original/";
 
@@ -21,5 +21,5 @@ export const API_OPTIONS = {
     {id: "hindi", name: "Hindi"}
   ];
 
-  export const OPENAI_KEY = process.env.OPENAI_KEY;
+  export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
   console.log(OPENAI_KEY)
