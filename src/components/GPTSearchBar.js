@@ -2,9 +2,8 @@ import React, { useRef } from 'react'
 import { API_OPTIONS, NETFLIX_BACKGROUND } from '../utils/constants'
 import lang from '../utils/lang'
 import { useDispatch, useSelector } from 'react-redux'
-import openAIClient from '../utils/openAI';
+//import openAIClient from '../utils/openAI';
 import { addMovieResults, addSearchedTMDBMovies } from '../utils/gptSclice';
-import useGPTSearchMovies from '../hooks/useGPTSearchMovies';
 
 export default function GPTSearchBar() {
 

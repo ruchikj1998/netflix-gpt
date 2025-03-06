@@ -12,7 +12,8 @@ export const API_OPTIONS = {
       //Authorization: 'Bearer '+ import.meta.env.TBDM_AUTH
     }
   };
-
+  console.log(process.env.TBDM_AUTH)
+  
   export const MOVIE_IMAGE_URL = "https://image.tmdb.org/t/p/original/";
 
   export const LANG_OPTIONS = [
